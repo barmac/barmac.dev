@@ -1,0 +1,23 @@
+{% component post_date(d) -%}
+<time datetime="{{ d | date(format='%Y-%m-%d') }}">{{ d | date(format="%-d %B %Y") }}</time>
+{%- endcomponent %}
+
+{% component post_item(page) -%}
+<li class="post-item">
+  <a class="post-link" href="{{ page.permalink | safe }}">
+    <span class="post-title" style="view-transition-name: t-{{ page.slug }}">{{ page.title }}</span>
+    <span class="post-date">{{ <post_date d={page.date} /> }}</span>
+  </a>
+  {%- if page.description %}<p class="post-desc">{{ page.description }}</p>{% endif %}
+</li>
+{%- endcomponent %}
+
+{% component post_tags(page) -%}
+{%- if page.taxonomies?.tags %}
+<ul class="tags" aria-label="Tags">
+  {%- for tag in page.taxonomies.tags %}
+  <li><a href="{{ get_taxonomy_url(kind='tags', term=tag) }}">#{{ tag }}</a></li>
+  {%- endfor %}
+</ul>
+{%- endif %}
+{%- endcomponent %}

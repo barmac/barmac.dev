@@ -1,0 +1,50 @@
+# Site settings. `zola serve` overrides base_url with localhost automatically,
+# and the GitHub Actions workflow overrides it with your Pages URL.
+base_url = "https://example.com"
+title = "Your Name"
+description = "Notes on software, ideas and whatever I'm learning."
+default_language = "en"
+
+compile_sass = false
+minify_html = true
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+build_search_index = true
+# Treat posts as plain Markdown, so `{{` or `{%` in code samples never breaks the build.
+skip_content_templating = ["**/*.md"]
+
+taxonomies = [
+  { name = "tags", feed = true },
+]
+
+[markdown]
+smart_punctuation = true
+external_links_target_blank = true
+external_links_no_referrer = true
+
+[markdown.highlighting]
+style = "class"
+light_theme = "github-light"
+dark_theme = "github-dark"
+
+[search]
+index_format = "elasticlunr_javascript"
+include_title = true
+include_description = true
+include_content = true
+truncate_content_length = 400
+
+[extra]
+# Everything below is yours to edit — it's used in the header, footer and About page.
+author = "Your Name"
+tagline = "I build things for the web and write about what I learn."
+email = "you@example.com"
+links = [
+  { name = "GitHub", url = "https://github.com/your-username" },
+  { name = "LinkedIn", url = "https://www.linkedin.com/in/your-username" },
+]
+nav = [
+  { name = "Blog", path = "/blog/" },
+  { name = "Tags", path = "/tags/" },
+  { name = "About", path = "/about/" },
+]

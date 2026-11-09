@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <h1>Hi, I'm {{ config.extra.author }}.</h1>
+  <p class="lead">{{ config.extra.tagline }}</p>
+  <p><a href="{{ get_url(path='/about/') }}">More about me →</a></p>
+</section>
+
+{%- set blog = get_section(path="blog/_index.md") %}
+<section>
+  <h2 class="section-label">Latest writing</h2>
+  <ul class="post-list">
+    {%- for page in blog.pages[:5] %}{{ <post_item page /> }}{% endfor %}
+  </ul>
+  {%- if blog.pages | length > 5 %}<p><a href="{{ blog.permalink | safe }}">All posts →</a></p>{% endif %}
+</section>
+{% endblock content %}

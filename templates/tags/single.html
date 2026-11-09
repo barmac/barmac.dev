@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{%- set n = term.pages | length %}
+<p class="eyebrow"><a href="{{ get_url(path='/tags/') }}">Tags</a></p>
+<h1>#{{ term.name }}</h1>
+<p class="muted">{{ n }} {{ "post" if n == 1 else "posts" }}</p>
+<ul class="post-list">
+  {%- for page in term.pages %}{{ <post_item page /> }}{% endfor %}
+</ul>
+{% endblock content %}

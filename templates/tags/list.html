@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Tags</h1>
+<ul class="tag-cloud">
+  {%- for term in terms %}
+  <li><a href="{{ term.permalink | safe }}">#{{ term.name }} <span class="muted">{{ term.pages | length }}</span></a></li>
+  {%- endfor %}
+  {%- if terms | length == 0 %}<li class="muted">No tags yet.</li>{% endif %}
+</ul>
+{% endblock content %}

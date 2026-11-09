@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ section.title }}</h1>
+{%- for year, posts in section.pages | group_by(attribute="year") %}
+<h2 class="section-label">{{ year }}</h2>
+<ul class="post-list">
+  {%- for page in posts %}{{ <post_item page /> }}{% endfor %}
+</ul>
+{%- endfor %}
+{%- if section.pages | length == 0 %}<p class="muted">No posts yet.</p>{% endif %}
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="post">
+  <header class="post-header"><h1>{{ page.title }}</h1></header>
+  <div class="prose">
+    {{ page.content | safe }}
+    <ul>
+      {%- for link in config.extra.links %}
+      <li><a href="{{ link.url }}" rel="me">{{ link.name }}</a></li>
+      {%- endfor %}
+      <li><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
+    </ul>
+  </div>
+</article>
+{% endblock content %}
