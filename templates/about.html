@@ -8,7 +8,9 @@
       {%- for link in config.extra.links %}
       <li><a href="{{ link.url }}" rel="me">{{ link.name }}</a></li>
       {%- endfor %}
+      {%- if config.extra?.email %}
       <li><a href="mailto:{{ config.extra.email }}">{{ config.extra.email }}</a></li>
+      {%- endif %}
     </ul>
   </div>
 </article>

@@ -1,8 +1,8 @@
 # Site settings. `zola serve` overrides base_url with localhost automatically,
 # and the GitHub Actions workflow overrides it with your Pages URL.
-base_url = "https://example.com"
-title = "Your Name"
-description = "Notes on software, ideas and whatever I'm learning."
+base_url = "https://barmac.github.io"
+title = "Maciej Barelkowski"
+description = "Maciej Barelkowski works on bpmn.io at Camunda and writes about BPMN, DMN, JavaScript and the web."
 default_language = "en"
 
 compile_sass = false
@@ -36,12 +36,11 @@ truncate_content_length = 400
 
 [extra]
 # Everything below is yours to edit — it's used in the header, footer and About page.
-author = "Your Name"
-tagline = "I build things for the web and write about what I learn."
-email = "you@example.com"
+author = "Maciej Barelkowski"
+tagline = "I work on bpmn.io at Camunda, building open-source tools for modelling BPMN, DMN and forms in the browser. Based in Poznań, Poland."
+# email = "you@example.com"   # uncomment to show an Email link in the footer and on the About page
 links = [
-  { name = "GitHub", url = "https://github.com/your-username" },
-  { name = "LinkedIn", url = "https://www.linkedin.com/in/your-username" },
+  { name = "GitHub", url = "https://github.com/barmac" },
 ]
 nav = [
   { name = "Blog", path = "/blog/" },
