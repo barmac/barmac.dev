@@ -6,8 +6,6 @@ template = "about.html"
 
 Hi, I'm **Maciej Barelkowski**. I work at [Camunda](https://camunda.com) on [bpmn.io](https://bpmn.io), the open-source toolkits for viewing and editing BPMN, DMN and forms in the browser, and on the [Camunda Modeler](https://github.com/camunda/camunda-modeler) desktop app built on them. I live in Poznań, Poland.
 
-Most of what I write here is about process and decision modelling, JavaScript tooling, and the web platform.
-
 ## Side projects
 
 - [asdf-camunda-modeler](https://github.com/barmac/asdf-camunda-modeler): install and switch Camunda Modeler versions with the asdf version manager.
